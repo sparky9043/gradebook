@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     # custom apps
     'core',
     'accounts',
+    'courses',
     
     # preinstalled django apps
     'django.contrib.admin',
