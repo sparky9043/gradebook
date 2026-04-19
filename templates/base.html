@@ -99,13 +99,22 @@
       style="font-variation-settings: 'FILL' 1;"
         href="{% url 'core:index' %}">home</a>
       {% if user.is_authenticated %}
-      {% else %}
       <a class="text-slate-500 font-medium hover:text-slate-900 transition-colors duration-300 font-headline"
+        href="#"
+      >Courses</a>
+      <a class="text-slate-500 font-medium hover:text-slate-900 transition-colors duration-300 font-headline"
+        href="#"
+      >Students</a>
+      <a class="text-slate-500 font-medium hover:text-slate-900 transition-colors duration-300 font-headline"
+        href="#"
+      >About</a>
+      {% else %}
+      {% comment %} <a class="text-slate-500 font-medium hover:text-slate-900 transition-colors duration-300 font-headline"
         href="#">Features</a>
       <a class="text-slate-500 font-medium hover:text-slate-900 transition-colors duration-300 font-headline"
         href="#">Pricing</a>
       <a class="text-slate-500 font-medium hover:text-slate-900 transition-colors duration-300 font-headline"
-        href="#">About</a>
+        href="#">About</a> {% endcomment %}
       {% endif %}
     </div>
     <div class="flex items-center gap-4">
