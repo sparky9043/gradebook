@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Students | Academic Atelier</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#4d5d73",
+                        "inverse-surface": "#0b0f10",
+                        "on-error-container": "#752121",
+                        "tertiary": "#575f75",
+                        "tertiary-dim": "#4b5369",
+                        "on-primary-fixed-variant": "#515c70",
+                        "tertiary-container": "#dae2fd",
+                        "on-secondary-fixed": "#314055",
+                        "secondary-fixed": "#d3e4fe",
+                        "on-surface-variant": "#566166",
+                        "primary-fixed-dim": "#cad5ed",
+                        "surface-container": "#e8eff3",
+                        "primary-dim": "#485367",
+                        "on-tertiary": "#f9f8ff",
+                        "secondary-dim": "#44546a",
+                        "surface-tint": "#545f73",
+                        "inverse-primary": "#dae6fe",
+                        "surface-bright": "#f7f9fb",
+                        "surface-variant": "#d9e4ea",
+                        "on-background": "#2a3439",
+                        "surface-container-low": "#f0f4f7",
+                        "on-secondary-container": "#435368",
+                        "on-error": "#fff7f6",
+                        "on-tertiary-fixed-variant": "#535b71",
+                        "on-primary": "#f6f7ff",
+                        "tertiary-fixed-dim": "#ccd4ee",
+                        "surface-dim": "#cfdce3",
+                        "surface-container-highest": "#d9e4ea",
+                        "primary": "#545f73",
+                        "on-surface": "#2a3439",
+                        "on-tertiary-container": "#4a5167",
+                        "error": "#9f403d",
+                        "primary-fixed": "#d8e3fb",
+                        "on-primary-fixed": "#354053",
+                        "on-primary-container": "#475266",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#f7f9fb",
+                        "secondary": "#506076",
+                        "error-container": "#fe8983",
+                        "secondary-container": "#d3e4fe",
+                        "outline": "#717c82",
+                        "on-secondary": "#f7f9ff",
+                        "tertiary-fixed": "#dae2fd",
+                        "on-tertiary-fixed": "#373f54",
+                        "surface": "#f7f9fb",
+                        "inverse-on-surface": "#9a9d9f",
+                        "error-dim": "#4e0309",
+                        "secondary-fixed-dim": "#c5d6f0",
+                        "primary-container": "#d8e3fb",
+                        "surface-container-high": "#e1e9ee",
+                        "outline-variant": "#a9b4b9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #f7f9fb; }
+        .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- SideNavBar Component -->
+<aside class="h-screen w-64 fixed left-0 top-0 overflow-y-auto bg-slate-100 dark:bg-slate-950 flex flex-col p-6 space-y-2 z-50">
+<div class="mb-8 px-2 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+<div>
+<h1 class="text-2xl font-black text-slate-800 dark:text-slate-100 tracking-tighter leading-none">Atelier</h1>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Academic Management</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200/30 dark:hover:bg-slate-800/30 rounded-lg transition-all ease-out duration-300 font-medium text-sm" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span>Dashboard</span>
+</a>
+<!-- Active State: Students -->
+<a class="flex items-center gap-3 px-4 py-3 text-slate-900 dark:text-slate-50 font-bold bg-white/50 dark:bg-slate-900/50 rounded-lg shadow-sm transition-all ease-out duration-300 font-medium text-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span>Students</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200/30 dark:hover:bg-slate-800/30 rounded-lg transition-all ease-out duration-300 font-medium text-sm" href="#">
+<span class="material-symbols-outlined">description</span>
+<span>Assignments</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200/30 dark:hover:bg-slate-800/30 rounded-lg transition-all ease-out duration-300 font-medium text-sm" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span>Gradebook</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200/30 dark:hover:bg-slate-800/30 rounded-lg transition-all ease-out duration-300 font-medium text-sm" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span>Analytics</span>
+</a>
+</nav>
+<div class="pt-4 border-t border-slate-200/50 dark:border-slate-800/50 space-y-1">
+<button class="w-full bg-primary hover:bg-primary-dim text-on-primary py-3 rounded-xl font-bold text-sm mb-4 transition-all scale-98-active duration-200">
+                Record Grades
+            </button>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Log Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen">
+<!-- TopNavBar Component -->
+<header class="sticky top-0 z-40 bg-slate-50/80 backdrop-blur-xl dark:bg-slate-900/80 flex justify-between items-center w-full px-8 py-4">
+<div class="flex items-center gap-6">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+<input class="bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 text-sm w-64 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all" placeholder="Search students..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-slate-500 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-slate-500 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all active:scale-95">
+<span class="material-symbols-outlined">history</span>
+</button>
+<div class="h-8 w-[1px] bg-slate-200 mx-2"></div>
+<div class="flex items-center gap-3 pl-2">
+<div class="text-right">
+<p class="text-xs font-bold text-slate-900">Dr. Julian Vance</p>
+<p class="text-[10px] text-slate-500">Principal Instructor</p>
+</div>
+<img alt="Instructor Profile" class="w-10 h-10 rounded-full object-cover ring-2 ring-white shadow-sm" data-alt="Close-up portrait of a professional man in a tailored grey suit with a confident and warm expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD4zbPlk-M27SFJSbUEvKxFYhitRkdgWT_S45MBlQxFu4CGb6yieehFk7gi3hK1ieo7oc61VSbvSTvYlrxEaCwaCdMscGE3LZprqJvhWPBldUIb6qbdBXquYfWDBwlbNgDHC77JfypI562JGLbCTlnG7EcAq_GfLUiNOPphknqQQ5HDaicu-kS7Rdt6T3y-5mIHaVk9h4AjQtgBE4sh6TDiKhOE2oFQhUbolhXYFqmj9oWT4IUlDjvd5iz2RH5IYHCxUWmfiyjxZQQ"/>
+</div>
+</div>
+</header>
+<div class="p-8">
+<!-- Header Section -->
+<div class="mb-10 flex justify-between items-end">
+<div>
+<h2 class="text-4xl font-black font-headline text-slate-900 tracking-tight mb-2">Student Registry</h2>
+<p class="text-on-surface-variant max-w-lg">Managing enrollment and performance metrics for the current academic session. Detailed view of student demographics and grade standing.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 bg-surface-container-high text-on-surface rounded-xl font-bold text-sm hover:bg-surface-container-highest transition-all">
+                        Export List
+                    </button>
+<button class="px-6 py-2.5 bg-primary text-on-primary rounded-xl font-bold text-sm shadow-lg shadow-primary/20 hover:bg-primary-dim transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">person_add</span>
+                        Add Student
+                    </button>
+</div>
+</div>
+<!-- Dashboard Stats Summary -->
+<div class="grid grid-cols-4 gap-6 mb-10">
+<div class="bg-surface-container-lowest p-6 rounded-xl border-none shadow-sm flex items-center gap-4">
+<div class="w-12 h-12 bg-primary-fixed rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Total Students</p>
+<p class="text-2xl font-black text-on-surface">1,248</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border-none shadow-sm flex items-center gap-4">
+<div class="w-12 h-12 bg-tertiary-fixed rounded-xl flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Avg. Grade</p>
+<p class="text-2xl font-black text-on-surface">88.4%</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border-none shadow-sm flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary-fixed rounded-xl flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">pending_actions</span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Attendance</p>
+<p class="text-2xl font-black text-on-surface">96.2%</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border-none shadow-sm flex items-center gap-4">
+<div class="w-12 h-12 bg-error-container/20 rounded-xl flex items-center justify-center text-error">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">At Risk</p>
+<p class="text-2xl font-black text-on-surface">12</p>
+</div>
+</div>
+</div>
+<!-- Main Table Container -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-xl shadow-slate-200/40">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="px-8 py-5 text-xs font-black text-on-surface-variant uppercase tracking-widest">Student Name</th>
+<th class="px-8 py-5 text-xs font-black text-on-surface-variant uppercase tracking-widest">Grade Level</th>
+<th class="px-8 py-5 text-xs font-black text-on-surface-variant uppercase tracking-widest">Date of Birth</th>
+<th class="px-8 py-5 text-xs font-black text-on-surface-variant uppercase tracking-widest">Status</th>
+<th class="px-8 py-5 text-xs font-black text-on-surface-variant uppercase tracking-widest text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- Student Row 1 -->
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed-dim flex items-center justify-center font-bold text-primary">AA</div>
+<div>
+<p class="font-bold text-on-surface">Alexander Arnault</p>
+<p class="text-xs text-on-surface-variant">alex.a@atelier.edu</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-on-secondary-fixed-variant">12th Grade</span>
+</td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">May 14, 2006</td>
+<td class="px-8 py-4">
+<span class="flex items-center gap-1.5 text-xs font-bold text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                        Active
+                                    </span>
+</td>
+<td class="px-8 py-4 text-right">
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Repeat Student Row 2-20 -->
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed-dim flex items-center justify-center font-bold text-tertiary">BB</div>
+<div>
+<p class="font-bold text-on-surface">Beatrice Bennett</p>
+<p class="text-xs text-on-surface-variant">b.bennett@atelier.edu</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-on-secondary-fixed-variant">11th Grade</span>
+</td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Oct 22, 2007</td>
+<td class="px-8 py-4">
+<span class="flex items-center gap-1.5 text-xs font-bold text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                        Active
+                                    </span>
+</td>
+<td class="px-8 py-4 text-right">
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Student Row 3 -->
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed-dim flex items-center justify-center font-bold text-secondary">CC</div>
+<div>
+<p class="font-bold text-on-surface">Caspian Thorne</p>
+<p class="text-xs text-on-surface-variant">c.thorne@atelier.edu</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-on-secondary-fixed-variant">10th Grade</span>
+</td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Jan 05, 2008</td>
+<td class="px-8 py-4">
+<span class="flex items-center gap-1.5 text-xs font-bold text-error">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                                        On Leave
+                                    </span>
+</td>
+<td class="px-8 py-4 text-right">
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- More student data rows to fulfill requirement of 20 -->
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed-dim flex items-center justify-center font-bold text-primary">DM</div>
+<div>
+<p class="font-bold text-on-surface">Daphne Miller</p>
+<p class="text-xs text-on-surface-variant">d.miller@atelier.edu</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-on-secondary-fixed-variant">12th Grade</span>
+</td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Mar 12, 2006</td>
+<td class="px-8 py-4">
+<span class="flex items-center gap-1.5 text-xs font-bold text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                        Active
+                                    </span>
+</td>
+<td class="px-8 py-4 text-right">
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Generic Repeating Pattern for Visual Completion of 20 Students -->
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-4"><div class="flex items-center gap-4"><div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold">EH</div><div><p class="font-bold">Elias Halloway</p><p class="text-xs text-on-surface-variant">e.halloway@atelier.edu</p></div></div></td>
+<td class="px-8 py-4"><span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold">9th Grade</span></td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Dec 19, 2009</td>
+<td class="px-8 py-4"><span class="flex items-center gap-1.5 text-xs font-bold text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Active</span></td>
+<td class="px-8 py-4 text-right"><button class="p-2 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined">more_vert</span></button></td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-4"><div class="flex items-center gap-4"><div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold">FR</div><div><p class="font-bold">Fiona Rose</p><p class="text-xs text-on-surface-variant">f.rose@atelier.edu</p></div></div></td>
+<td class="px-8 py-4"><span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold">10th Grade</span></td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Apr 30, 2008</td>
+<td class="px-8 py-4"><span class="flex items-center gap-1.5 text-xs font-bold text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Active</span></td>
+<td class="px-8 py-4 text-right"><button class="p-2 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined">more_vert</span></button></td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-4"><div class="flex items-center gap-4"><div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold">GL</div><div><p class="font-bold">Gabriel Laurent</p><p class="text-xs text-on-surface-variant">g.laurent@atelier.edu</p></div></div></td>
+<td class="px-8 py-4"><span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold">11th Grade</span></td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Jul 02, 2007</td>
+<td class="px-8 py-4"><span class="flex items-center gap-1.5 text-xs font-bold text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Active</span></td>
+<td class="px-8 py-4 text-right"><button class="p-2 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined">more_vert</span></button></td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-4"><div class="flex items-center gap-4"><div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold">HS</div><div><p class="font-bold">Hazel Sinclair</p><p class="text-xs text-on-surface-variant">h.sinclair@atelier.edu</p></div></div></td>
+<td class="px-8 py-4"><span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold">12th Grade</span></td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Sep 11, 2006</td>
+<td class="px-8 py-4"><span class="flex items-center gap-1.5 text-xs font-bold text-tertiary"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>Probation</span></td>
+<td class="px-8 py-4 text-right"><button class="p-2 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined">more_vert</span></button></td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-4"><div class="flex items-center gap-4"><div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold">IV</div><div><p class="font-bold">Isaac Vance</p><p class="text-xs text-on-surface-variant">i.vance@atelier.edu</p></div></div></td>
+<td class="px-8 py-4"><span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold">9th Grade</span></td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Jan 14, 2009</td>
+<td class="px-8 py-4"><span class="flex items-center gap-1.5 text-xs font-bold text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Active</span></td>
+<td class="px-8 py-4 text-right"><button class="p-2 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined">more_vert</span></button></td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-4"><div class="flex items-center gap-4"><div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold">JW</div><div><p class="font-bold">Julia Waters</p><p class="text-xs text-on-surface-variant">j.waters@atelier.edu</p></div></div></td>
+<td class="px-8 py-4"><span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold">10th Grade</span></td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Feb 28, 2008</td>
+<td class="px-8 py-4"><span class="flex items-center gap-1.5 text-xs font-bold text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Active</span></td>
+<td class="px-8 py-4 text-right"><button class="p-2 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined">more_vert</span></button></td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-4"><div class="flex items-center gap-4"><div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold">KP</div><div><p class="font-bold">Kieran Price</p><p class="text-xs text-on-surface-variant">k.price@atelier.edu</p></div></div></td>
+<td class="px-8 py-4"><span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold">11th Grade</span></td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Nov 03, 2007</td>
+<td class="px-8 py-4"><span class="flex items-center gap-1.5 text-xs font-bold text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Active</span></td>
+<td class="px-8 py-4 text-right"><button class="p-2 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined">more_vert</span></button></td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-4"><div class="flex items-center gap-4"><div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold">LY</div><div><p class="font-bold">Lydia Young</p><p class="text-xs text-on-surface-variant">l.young@atelier.edu</p></div></div></td>
+<td class="px-8 py-4"><span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold">12th Grade</span></td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Aug 21, 2006</td>
+<td class="px-8 py-4"><span class="flex items-center gap-1.5 text-xs font-bold text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Active</span></td>
+<td class="px-8 py-4 text-right"><button class="p-2 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined">more_vert</span></button></td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-4"><div class="flex items-center gap-4"><div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold">MN</div><div><p class="font-bold">Marcus North</p><p class="text-xs text-on-surface-variant">m.north@atelier.edu</p></div></div></td>
+<td class="px-8 py-4"><span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold">9th Grade</span></td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Jun 14, 2009</td>
+<td class="px-8 py-4"><span class="flex items-center gap-1.5 text-xs font-bold text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Active</span></td>
+<td class="px-8 py-4 text-right"><button class="p-2 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined">more_vert</span></button></td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-4"><div class="flex items-center gap-4"><div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold">NO</div><div><p class="font-bold">Nina Ortiz</p><p class="text-xs text-on-surface-variant">n.ortiz@atelier.edu</p></div></div></td>
+<td class="px-8 py-4"><span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold">10th Grade</span></td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Mar 05, 2008</td>
+<td class="px-8 py-4"><span class="flex items-center gap-1.5 text-xs font-bold text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Active</span></td>
+<td class="px-8 py-4 text-right"><button class="p-2 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined">more_vert</span></button></td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-4"><div class="flex items-center gap-4"><div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold">OS</div><div><p class="font-bold">Oliver Smith</p><p class="text-xs text-on-surface-variant">o.smith@atelier.edu</p></div></div></td>
+<td class="px-8 py-4"><span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold">11th Grade</span></td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Dec 25, 2007</td>
+<td class="px-8 py-4"><span class="flex items-center gap-1.5 text-xs font-bold text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Active</span></td>
+<td class="px-8 py-4 text-right"><button class="p-2 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined">more_vert</span></button></td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-4"><div class="flex items-center gap-4"><div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold">PP</div><div><p class="font-bold">Penelope Park</p><p class="text-xs text-on-surface-variant">p.park@atelier.edu</p></div></div></td>
+<td class="px-8 py-4"><span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold">12th Grade</span></td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Apr 09, 2006</td>
+<td class="px-8 py-4"><span class="flex items-center gap-1.5 text-xs font-bold text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Active</span></td>
+<td class="px-8 py-4 text-right"><button class="p-2 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined">more_vert</span></button></td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-4"><div class="flex items-center gap-4"><div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold">QT</div><div><p class="font-bold">Quentin Tate</p><p class="text-xs text-on-surface-variant">q.tate@atelier.edu</p></div></div></td>
+<td class="px-8 py-4"><span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold">9th Grade</span></td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Jan 11, 2009</td>
+<td class="px-8 py-4"><span class="flex items-center gap-1.5 text-xs font-bold text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Active</span></td>
+<td class="px-8 py-4 text-right"><button class="p-2 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined">more_vert</span></button></td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-4"><div class="flex items-center gap-4"><div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold">RV</div><div><p class="font-bold">Riley Vance</p><p class="text-xs text-on-surface-variant">r.vance@atelier.edu</p></div></div></td>
+<td class="px-8 py-4"><span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold">10th Grade</span></td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Oct 30, 2008</td>
+<td class="px-8 py-4"><span class="flex items-center gap-1.5 text-xs font-bold text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Active</span></td>
+<td class="px-8 py-4 text-right"><button class="p-2 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined">more_vert</span></button></td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-4"><div class="flex items-center gap-4"><div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold">SL</div><div><p class="font-bold">Sophie Lane</p><p class="text-xs text-on-surface-variant">s.lane@atelier.edu</p></div></div></td>
+<td class="px-8 py-4"><span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold">11th Grade</span></td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">May 19, 2007</td>
+<td class="px-8 py-4"><span class="flex items-center gap-1.5 text-xs font-bold text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Active</span></td>
+<td class="px-8 py-4 text-right"><button class="p-2 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined">more_vert</span></button></td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-4"><div class="flex items-center gap-4"><div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold">TC</div><div><p class="font-bold">Tobias Cole</p><p class="text-xs text-on-surface-variant">t.cole@atelier.edu</p></div></div></td>
+<td class="px-8 py-4"><span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold">12th Grade</span></td>
+<td class="px-8 py-4 text-sm text-on-surface-variant">Jul 07, 2006</td>
+<td class="px-8 py-4"><span class="flex items-center gap-1.5 text-xs font-bold text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Active</span></td>
+<td class="px-8 py-4 text-right"><button class="p-2 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined">more_vert</span></button></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination/Footer -->
+<div class="px-8 py-6 bg-surface-container-low/30 border-t border-surface-container flex items-center justify-between">
+<p class="text-sm text-on-surface-variant font-medium">Showing <span class="text-on-surface font-bold">1 - 20</span> of 1,248 students</p>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-surface-container bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-on-primary font-bold text-sm shadow-md">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-surface-container bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all font-bold text-sm">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-surface-container bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all font-bold text-sm">3</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-surface-container bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>
