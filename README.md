@@ -5,6 +5,16 @@ This document outlines the fulfilled homework requirements for the `accounts` ap
 **Note:**  
 To exceed the basic requirement of static pages, this project integrates Tailwind CSS for modern, responsive styling and incorporates design components from Stitch, as discussed in class. The outcome is a fully functional Django gradebook application with a cohesive user interface, where the four essential pages—landing, login, register, and dashboard—are built using Stitch's boilerplate designs and powered by Django for dynamic functionality.
 
+## Additional Login-Protected Pages
+
+To further enhance the gradebook functionality, three additional login-protected pages have been implemented beyond the core accounts requirements:
+
+- **Dashboard** (`/dashboard/`): Accessible in the `core` app, displays user-specific content.
+- **Courses** (`/courses/`): Lists available courses, implemented in the `courses` app.
+- **Students** (`/students/`): Displays student information, implemented in the `students` app.
+
+All three pages require authentication using Django's `@login_required` decorator.
+
 ## 📸 Screenshots
 
 ### Landing Page
@@ -19,6 +29,12 @@ To exceed the basic requirement of static pages, this project integrates Tailwin
 ### Dashboard Page
 ![Dashboard Page](screenshots/03_dashboard_page.png)
 
+### Courses Page
+![Courses Page](screenshots/04_courses_page.png)
+
+### Students Page
+![Students Page](screenshots/05_students_page.png)
+
 ## ✅ Homework Requirements Fulfilled
 
 ### 1. Add the Accounts App to Your Django Project with 4 Static Pages and Templates
@@ -31,7 +47,7 @@ To exceed the basic requirement of static pages, this project integrates Tailwin
 - Removed landing page; home page (`core/index.html`) serves as the entry point.
 
 ### 3. Require Login to the Other 3 Pages Besides the Home Page
-- Dashboard page requires login using `@login_required` decorator.
+- Dashboard, Courses, and Students pages require login using `@login_required` decorator.
 - Home page remains public.
 - Configured `LOGIN_URL` in `settings.py` for proper redirects.
 
@@ -42,8 +58,8 @@ To exceed the basic requirement of static pages, this project integrates Tailwin
 ```
 gradebook/
 ├── config/
-│   ├── settings.py  # Includes 'accounts' in INSTALLED_APPS, LOGIN_URL set
-│   └── urls.py      # Includes core and accounts URLs
+│   ├── settings.py  # Includes 'accounts', 'courses', 'students' in INSTALLED_APPS, LOGIN_URL set
+│   └── urls.py      # Includes core, accounts, courses, students URLs
 ├── core/
 │   ├── views.py     # index and dashboard views
 │   ├── urls.py      # URL patterns
@@ -56,6 +72,16 @@ gradebook/
 │   └── templates/accounts/
 │       ├── login.html
 │       └── register.html
+├── courses/
+│   ├── views.py     # courses view
+│   ├── urls.py      # URL patterns
+│   └── templates/courses/
+│       └── courses.html
+├── students/
+│   ├── views.py     # students view
+│   ├── urls.py      # URL patterns
+│   └── templates/students/
+│       └── students.html
 ├── templates/
 │   └── base.html    # Conditional navbar
 └── manage.py
@@ -65,7 +91,7 @@ gradebook/
 1. Install dependencies: `pip install -r requirements.txt`
 2. Run migrations: `python manage.py migrate`
 3. Start server: `python manage.py runserver`
-4. Test login/register flow and protected pages.
+4. Test login/register flow and protected pages (dashboard, courses, students).
 
 Django apps are designed to be self-contained. An app is just a Python package (a folder with an `__init__.py`) that follows Django conventions. As long as the app's code does not hardcode paths or settings from the original project, it can be dropped into any other project and wired up with minimal changes.
 
