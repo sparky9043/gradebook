@@ -1,8 +1,22 @@
-# Django Gradebook Project - Accounts App Implementation
+# 🐍 Django Gradebook Project - Accounts App Implementation
 
 This document outlines the fulfilled homework requirements for the `accounts` app in the Django Gradebook project.
 
-## Homework Requirements Fulfilled
+## 📸 Screenshots
+
+### Landing Page
+![Landing Page](screenshots/00_landing_page.png)
+
+### Login Page
+![Login Page](screenshots/01_login_page.png)
+
+### Register Page
+![Register Page](screenshots/02_register_page.png)
+
+### Dashboard Page
+![Dashboard Page](screenshots/03_dashboard_page.png)
+
+## ✅ Homework Requirements Fulfilled
 
 ### 1. Add the Accounts App to Your Django Project with 4 Static Pages and Templates
 - Added `accounts` app with views for login, register, logout, and dashboard.
@@ -21,7 +35,7 @@ This document outlines the fulfilled homework requirements for the `accounts` ap
 ### 4. Markdown Guides Reference
 - Implementation follows authentication and app export guides from class 22 folder.
 
-## Project Structure
+## 📁 Project Structure
 ```
 gradebook/
 ├── config/
@@ -44,7 +58,7 @@ gradebook/
 └── manage.py
 ```
 
-## Running the Project
+## 🚀 Running the Project
 1. Install dependencies: `pip install -r requirements.txt`
 2. Run migrations: `python manage.py migrate`
 3. Start server: `python manage.py runserver`
