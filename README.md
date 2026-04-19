@@ -65,12 +65,3 @@ gradebook/
 │   └── base.html    # Updated with conditional navbar
 └── manage.py
 ```
-
-## Summary of Changes Made
-- Added `accounts` app with authentication views and templates.
-- Updated navbar in `base.html` for conditional rendering based on login status.
-- Fixed `LOGIN_URL` in `settings.py` to resolve redirect issues.
-- Ensured dashboard requires login, while home page remains public.
-- Integrated Tailwind CSS and Stitch components for modern UI (as per class discussions).
-- The HTML templates used by the app
-- A few lines of configuration in the new project's `settings.py` and `urls.py`
