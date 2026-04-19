@@ -2,6 +2,9 @@
 
 This document outlines the fulfilled homework requirements for the `accounts` app in the Django Gradebook project.
 
+**Note:**  
+To exceed the basic requirement of static pages, this project integrates Tailwind CSS for modern, responsive styling and incorporates design components from Stitch, as discussed in class. The outcome is a fully functional Django gradebook application with a cohesive user interface, where the four essential pages—landing, login, register, and dashboard—are built using Stitch's boilerplate designs and powered by Django for dynamic functionality.
+
 ## 📸 Screenshots
 
 ### Landing Page
