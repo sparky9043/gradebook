@@ -95,10 +95,10 @@
     class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 py-4 max-w-full bg-slate-50/80 backdrop-blur-xl transition-all duration-300">
     <div class="text-2xl font-bold text-slate-800 font-headline tracking-tight">Academic Atelier</div>
     <div class="hidden md:flex items-center gap-8">
-      <a class="material-symbols-outlined"
-      style="font-variation-settings: 'FILL' 1;"
-        href="{% url 'core:index' %}">home</a>
       {% if user.is_authenticated %}
+      <a class="material-symbols-outlined"
+        href="{% url 'core:dashboard' %}"
+      >dashboard</a>
       <a class="text-slate-500 font-medium hover:text-slate-900 transition-colors duration-300 font-headline"
         href="{% url 'courses:courses' %}"
       >Courses</a>
@@ -109,12 +109,9 @@
         href="#"
       >About</a>
       {% else %}
-      {% comment %} <a class="text-slate-500 font-medium hover:text-slate-900 transition-colors duration-300 font-headline"
-        href="#">Features</a>
-      <a class="text-slate-500 font-medium hover:text-slate-900 transition-colors duration-300 font-headline"
-        href="#">Pricing</a>
-      <a class="text-slate-500 font-medium hover:text-slate-900 transition-colors duration-300 font-headline"
-        href="#">About</a> {% endcomment %}
+      <a class="material-symbols-outlined"
+      style="font-variation-settings: 'FILL' 1;"
+        href="{% url 'core:index' %}">home</a>
       {% endif %}
     </div>
     <div class="flex items-center gap-4">
