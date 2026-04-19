@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sign Up | Academic Atelier</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#506076",
+                        "outline-variant": "#a9b4b9",
+                        "primary-fixed": "#d8e3fb",
+                        "on-tertiary-container": "#4a5167",
+                        "error": "#9f403d",
+                        "surface-tint": "#545f73",
+                        "surface": "#f7f9fb",
+                        "surface-container-high": "#e1e9ee",
+                        "tertiary-fixed-dim": "#ccd4ee",
+                        "on-secondary": "#f7f9ff",
+                        "surface-container-low": "#f0f4f7",
+                        "on-secondary-container": "#435368",
+                        "primary-container": "#d8e3fb",
+                        "on-primary-fixed-variant": "#515c70",
+                        "on-secondary-fixed-variant": "#4d5d73",
+                        "tertiary": "#575f75",
+                        "surface-container": "#e8eff3",
+                        "surface-variant": "#d9e4ea",
+                        "on-surface": "#2a3439",
+                        "surface-bright": "#f7f9fb",
+                        "on-error": "#fff7f6",
+                        "on-tertiary": "#f9f8ff",
+                        "background": "#f7f9fb",
+                        "tertiary-dim": "#4b5369",
+                        "secondary-container": "#d3e4fe",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#566166",
+                        "primary-dim": "#485367",
+                        "on-primary-fixed": "#354053",
+                        "outline": "#717c82",
+                        "on-secondary-fixed": "#314055",
+                        "secondary-dim": "#44546a",
+                        "on-error-container": "#752121",
+                        "primary": "#545f73",
+                        "secondary-fixed": "#d3e4fe",
+                        "on-primary-container": "#475266",
+                        "primary-fixed-dim": "#cad5ed",
+                        "on-primary": "#f6f7ff",
+                        "on-tertiary-fixed-variant": "#535b71",
+                        "on-tertiary-fixed": "#373f54",
+                        "error-container": "#fe8983",
+                        "tertiary-fixed": "#dae2fd",
+                        "inverse-surface": "#0b0f10",
+                        "tertiary-container": "#dae2fd",
+                        "secondary-fixed-dim": "#c5d6f0",
+                        "inverse-primary": "#dae6fe",
+                        "surface-dim": "#cfdce3",
+                        "inverse-on-surface": "#9a9d9f",
+                        "surface-container-highest": "#d9e4ea",
+                        "error-dim": "#4e0309",
+                        "on-background": "#2a3439"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #f7f9fb;
+            color: #2a3439;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(20px);
+        }
+
+        .primary-gradient {
+            background: linear-gradient(135deg, #545f73 0%, #485367 100%);
+        }
+
+        .ambient-shadow {
+            shadow-color: rgba(42, 52, 57, 0.06);
+            box-shadow: 0 24px 48px -12px rgba(42, 52, 57, 0.08);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 py-4 max-w-full bg-slate-50/80 backdrop-blur-xl transition-all duration-300">
+        <div class="text-2xl font-bold text-slate-800 tracking-tight font-['Plus_Jakarta_Sans']">
+            Academic Atelier
+        </div>
+        <div class="hidden md:flex items-center space-x-8 font-['Plus_Jakarta_Sans'] tracking-tight font-semibold">
+            <a class="text-slate-500 font-medium hover:text-slate-900 transition-colors duration-300"
+                href="#">Features</a>
+            <a class="text-slate-500 font-medium hover:text-slate-900 transition-colors duration-300"
+                href="#">Pricing</a>
+            <a class="text-slate-500 font-medium hover:text-slate-900 transition-colors duration-300" href="#">About</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <button
+                class="text-slate-700 font-['Plus_Jakarta_Sans'] font-semibold hover:text-slate-900 transition-all px-4 py-2">Login</button>
+            <button
+                class="primary-gradient text-on-primary px-6 py-2.5 rounded-xl font-['Plus_Jakarta_Sans'] font-bold hover:scale-95 transition-all duration-200">Sign
+                Up</button>
+        </div>
+    </nav>
+    <main class="min-h-screen pt-24 pb-12 flex items-center justify-center px-4 md:px-8">
+        <!-- Main Layout Container: Bento-inspired Asymmetric Layout -->
+        <div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            <!-- Left Side: Editorial Content -->
+            <div class="lg:col-span-5 flex flex-col justify-center space-y-8 p-4">
+                <div class="space-y-4">
+                    <span
+                        class="inline-flex items-center px-3 py-1 rounded-full bg-tertiary-container text-on-tertiary-container text-xs font-bold tracking-widest uppercase">
+                        The Modern Educator
+                    </span>
+                    <h1 class="text-5xl md:text-6xl font-extrabold text-on-surface leading-[1.1] tracking-tight">
+                        Design your <span class="text-primary-dim">academic</span> legacy.
+                    </h1>
+                    <p class="text-lg text-on-surface-variant leading-relaxed max-w-md">
+                        Join an elite community of educators utilizing high-end editorial interfaces to transform
+                        student data into meaningful insights.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-surface-container-low p-6 rounded-xl space-y-2">
+                        <span class="material-symbols-outlined text-primary"
+                            style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                        <h3 class="font-bold text-on-surface">Precision Grading</h3>
+                        <p class="text-sm text-on-surface-variant">Calibrated tools for modern assessment.</p>
+                    </div>
+                    <div class="bg-surface-container-low p-6 rounded-xl space-y-2">
+                        <span class="material-symbols-outlined text-primary"
+                            style="font-variation-settings: 'FILL' 1;">analytics</span>
+                        <h3 class="font-bold text-on-surface">Deep Insights</h3>
+                        <p class="text-sm text-on-surface-variant">Visualize progress with editorial clarity.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Side: Registration Form Card -->
+            <div
+                class="lg:col-span-7 bg-surface-container-lowest rounded-[2rem] p-8 md:p-12 ambient-shadow relative overflow-hidden">
+                <!-- Soft Tonal Background Element -->
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary-container/20 rounded-full blur-3xl"></div>
+                <div class="relative z-10 space-y-8">
+                    <div class="space-y-2">
+                        <h2 class="text-3xl font-bold text-on-surface tracking-tight">Create an Account</h2>
+                        <p class="text-on-surface-variant">Start your journey with Academic Atelier today.</p>
+                    </div>
+                    <form class="space-y-6">
+                        <!-- Name Field -->
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-on-surface-variant ml-1" for="name">Full Name</label>
+                            <input
+                                class="w-full bg-surface-container-low border-none rounded-xl px-4 py-4 text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary/40 focus:bg-surface-container-lowest transition-all"
+                                id="name" placeholder="Alexander Hamilton" type="text" />
+                        </div>
+                        <!-- Email Field -->
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-on-surface-variant ml-1" for="email">Work Email</label>
+                            <input
+                                class="w-full bg-surface-container-low border-none rounded-xl px-4 py-4 text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary/40 focus:bg-surface-container-lowest transition-all"
+                                id="email" placeholder="alex@academy.edu" type="email" />
+                        </div>
+                        <!-- Password Group -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-on-surface-variant ml-1"
+                                    for="password">Password</label>
+                                <input
+                                    class="w-full bg-surface-container-low border-none rounded-xl px-4 py-4 text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary/40 focus:bg-surface-container-lowest transition-all"
+                                    id="password" placeholder="••••••••" type="password" />
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-on-surface-variant ml-1"
+                                    for="confirm_password">Confirm Password</label>
+                                <input
+                                    class="w-full bg-surface-container-low border-none rounded-xl px-4 py-4 text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary/40 focus:bg-surface-container-lowest transition-all"
+                                    id="confirm_password" placeholder="••••••••" type="password" />
+                            </div>
+                        </div>
+                        <!-- Terms -->
+                        <div class="flex items-center space-x-3 ml-1">
+                            <input
+                                class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5 bg-surface-container-low"
+                                id="terms" type="checkbox" />
+                            <label class="text-sm text-on-surface-variant" for="terms">
+                                I agree to the <a class="text-primary font-bold hover:underline" href="#">Terms of
+                                    Service</a> and <a class="text-primary font-bold hover:underline" href="#">Privacy
+                                    Policy</a>.
+                            </label>
+                        </div>
+                        <!-- Submit Action -->
+                        <div class="pt-4 space-y-6">
+                            <button
+                                class="w-full primary-gradient text-on-primary py-4 rounded-xl text-lg font-bold hover:scale-[0.98] transition-all ambient-shadow"
+                                type="submit">
+                                Create Account
+                            </button>
+                            <p class="text-center text-on-surface-variant">
+                                Already have an account?
+                                <a class="text-primary font-bold hover:underline transition-all" href="#">Login here</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Visual Divider -->
+    <div class="max-w-6xl mx-auto px-8">
+        <div class="h-px bg-surface-container-high w-full"></div>
+    </div>
+    <!-- Footer -->
+    <footer
+        class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-slate-100 font-['Manrope'] text-sm tracking-wide">
+        <div class="flex flex-col items-center md:items-start gap-2">
+            <span class="text-lg font-bold text-slate-700 font-['Plus_Jakarta_Sans']">Academic Atelier</span>
+            <span class="text-slate-600">© 2024 The Academic Atelier. Refined grading for the modern educator.</span>
+        </div>
+        <div class="flex items-center gap-8 text-slate-500">
+            <a class="hover:text-slate-700 transition-all opacity-80 hover:opacity-100" href="#">Privacy</a>
+            <a class="hover:text-slate-700 transition-all opacity-80 hover:opacity-100" href="#">Terms</a>
+            <a class="hover:text-slate-700 transition-all opacity-80 hover:opacity-100" href="#">Support</a>
+            <a class="hover:text-slate-700 transition-all opacity-80 hover:opacity-100" href="#">Contact</a>
+        </div>
+    </footer>
+    <!-- Background Decoration -->
+    <div class="fixed top-0 right-0 -z-10 opacity-40">
+        <div
+            class="w-[800px] h-[800px] bg-gradient-to-br from-primary-container/20 to-transparent rounded-full blur-[120px]">
+        </div>
+    </div>
+    <div class="fixed bottom-0 left-0 -z-10 opacity-30">
+        <div
+            class="w-[600px] h-[600px] bg-gradient-to-tr from-secondary-container/20 to-transparent rounded-full blur-[100px]">
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+
+{% block main %}
+  <main class="ml-64 min-h-screen">
+    <!-- TopNavBar -->
+    <header
+      class="sticky top-0 z-40 bg-slate-50/80 backdrop-blur-xl flex justify-between items-center w-full px-8 py-4 font-['Plus_Jakarta_Sans'] tracking-tight">
+      <div class="flex items-center space-x-6">
+        <div class="relative">
+          <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+          <input
+            class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/40 w-64 text-sm transition-all"
+            placeholder="Search students or courses..." type="text" />
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <button class="p-2 text-slate-500 hover:bg-slate-200/50 rounded-lg transition-all">
+          <span class="material-symbols-outlined">notifications</span>
+        </button>
+        <button class="p-2 text-slate-500 hover:bg-slate-200/50 rounded-lg transition-all">
+          <span class="material-symbols-outlined">history</span>
+        </button>
+        <div class="h-8 w-[1px] bg-slate-200 mx-2"></div>
+        <div class="flex items-center space-x-3 group cursor-pointer">
+          <div class="text-right">
+            <p class="text-sm font-bold text-slate-900">Dr. Julian Vance</p>
+            <p class="text-[10px] text-slate-500 font-medium">Lead Instructor</p>
+          </div>
+          <img alt="Instructor Profile" class="w-10 h-10 rounded-xl object-cover ring-2 ring-white shadow-sm"
+            data-alt="Close up portrait of a professional male instructor in a modern office setting with warm soft lighting"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv1j3qIiVi6LFuSjy-wZJPGKyVHkdo9C7X-MB-3caWudyv_pu9rZOwPOifYyJulSlVDoeLCYsWFV_ngknmbO1UFRWdOX2ytNnC2wL0RMSoBkUc_N67vh2_AfXlWNaDYZSlOnoSoym0pvad5CTbUo3IwXnRt2lUdCL_bPJy1OkRMvhw0wllo-gxwt4w8VqKwBeBmnEi_m0gSKGNfMkRUiZNmn6iqPvASrJ6u1tdyQT55FaTxWN7P7vWp9vgY1eFI3e4zvYvb1V8p7j7" />
+        </div>
+      </div>
+    </header>
+    <!-- Content Canvas -->
+    <div class="p-10 space-y-10">
+      <!-- Welcome Hero -->
+      <section
+        class="relative overflow-hidden rounded-[2rem] bg-surface-container-lowest p-10 flex items-center justify-between">
+        <div class="relative z-10 max-w-xl">
+          <h2 class="text-4xl font-extrabold font-headline tracking-tighter text-on-surface mb-4">
+            Welcome back, <span class="text-primary">Professor.</span>
+          </h2>
+          <p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+            Your students have submitted 14 new assignments since yesterday. You have a mid-term review scheduled for
+            2:00 PM.
+          </p>
+          <div class="flex space-x-4">
+            <a
+              class="bg-primary-gradient px-6 py-3 rounded-xl text-on-primary font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform"
+              href={% url 'accounts:logout_view' %}
+            >
+              Logout
+            </a>
+            <a
+              class="bg-surface-container-high px-6 py-3 rounded-xl text-on-surface font-bold hover:bg-surface-container-highest transition-colors">
+              Manage Schedule
+            </a>
+          </div>
+        </div>
+        <div class="relative hidden lg:block">
+          <!-- Abstract Background Graphic -->
+          <div class="w-64 h-64 rounded-full bg-primary-container/30 blur-3xl absolute -top-10 -right-10"></div>
+          <div class="w-48 h-48 rounded-full bg-tertiary-container/30 blur-2xl absolute bottom-0 left-0"></div>
+          <img alt="Workspace Aesthetic" class="w-80 h-56 object-cover rounded-3xl shadow-2xl relative z-10"
+            data-alt="Clean minimal workspace with an open notebook, elegant pen, and a cup of coffee on a light marble table"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcYlr6kEIORmHYzskp67LtF1pNq_ByGzfNuf_lPBJYCBQ8tlknTi7RrgBjaGjXrjjYjBFN8Jkbrds1Zjd8xWFJatVMYNRGRF_q_ClRySEaeukf2K4WSqc7cbmDYU9mrVMbPcJsCaj5mgmznmxcpbuaIK1r5L1mOQDD55Y0ZbHyTmRe-y21t3xr1q81jtt60l8CnP3Wx1mAEo7NXFljCunUE9Du_uk5OhfYHMJOHjw86QMm4w6g-napqBYTKs3uswHQ0JPrjTW9uJOR" />
+        </div>
+      </section>
+      <!-- Stats Bento Grid -->
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Stat Card 1 -->
+        <div class="bg-surface-container-low p-8 rounded-[1.5rem] relative overflow-hidden group">
+          <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+            <span class="material-symbols-outlined text-6xl">group</span>
+          </div>
+          <p class="text-on-surface-variant font-bold text-sm uppercase tracking-widest mb-2">Total Students</p>
+          <div class="flex items-end space-x-2">
+            <h3 class="text-5xl font-black font-headline text-on-surface">142</h3>
+            <span class="text-primary font-bold mb-2 text-sm">+4 this term</span>
+          </div>
+        </div>
+        <!-- Stat Card 2 -->
+        <div class="bg-surface-container-low p-8 rounded-[1.5rem] relative overflow-hidden group">
+          <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+            <span class="material-symbols-outlined text-6xl">assignment</span>
+          </div>
+          <p class="text-on-surface-variant font-bold text-sm uppercase tracking-widest mb-2">Active Assignments</p>
+          <div class="flex items-end space-x-2">
+            <h3 class="text-5xl font-black font-headline text-on-surface">08</h3>
+            <span class="text-primary font-bold mb-2 text-sm">3 due today</span>
+          </div>
+        </div>
+        <!-- Stat Card 3 -->
+        <div class="bg-surface-container-low p-8 rounded-[1.5rem] relative overflow-hidden group">
+          <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+            <span class="material-symbols-outlined text-6xl">auto_graph</span>
+          </div>
+          <p class="text-on-surface-variant font-bold text-sm uppercase tracking-widest mb-2">Average Grade</p>
+          <div class="flex items-end space-x-2">
+            <h3 class="text-5xl font-black font-headline text-on-surface">A-</h3>
+            <span class="text-primary font-bold mb-2 text-sm">88.4% avg</span>
+          </div>
+        </div>
+      </section>
+      <!-- Bottom Section: Asymmetric Layout -->
+      <section class="grid grid-cols-1 lg:grid-cols-5 gap-10">
+        <!-- Recent Activity List (Larger) -->
+        <div class="lg:col-span-3 space-y-6">
+          <div class="flex items-center justify-between px-2">
+            <h4 class="text-xl font-bold font-headline text-on-surface">Recent Activity</h4>
+            <button class="text-primary font-bold text-sm hover:underline">View All</button>
+          </div>
+          <div class="space-y-4">
+            <!-- Activity Item 1 -->
+            <div
+              class="bg-surface-container-lowest p-6 rounded-2xl flex items-center justify-between hover:shadow-md transition-all">
+              <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined">upload_file</span>
+                </div>
+                <div>
+                  <p class="text-on-surface font-bold">Liam Henderson submitted 'World History Essay'</p>
+                  <p class="text-sm text-on-surface-variant">Advanced Humanities • 14 minutes ago</p>
+                </div>
+              </div>
+              <button
+                class="px-4 py-2 text-primary font-bold text-sm bg-primary/5 rounded-lg hover:bg-primary/10">Review</button>
+            </div>
+            <!-- Activity Item 2 -->
+            <div
+              class="bg-surface-container-lowest p-6 rounded-2xl flex items-center justify-between hover:shadow-md transition-all">
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-tertiary-container flex items-center justify-center text-tertiary">
+                  <span class="material-symbols-outlined">grade</span>
+                </div>
+                <div>
+                  <p class="text-on-surface font-bold">Grade published: Midterm Examination</p>
+                  <p class="text-sm text-on-surface-variant">Computer Science 101 • 2 hours ago</p>
+                </div>
+              </div>
+              <button
+                class="px-4 py-2 text-on-surface-variant font-bold text-sm bg-surface-container-high rounded-lg hover:bg-surface-container-highest">Details</button>
+            </div>
+            <!-- Activity Item 3 -->
+            <div
+              class="bg-surface-container-lowest p-6 rounded-2xl flex items-center justify-between hover:shadow-md transition-all">
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-secondary">
+                  <span class="material-symbols-outlined">chat_bubble</span>
+                </div>
+                <div>
+                  <p class="text-on-surface font-bold">New message from Sophie Chen</p>
+                  <p class="text-sm text-on-surface-variant">Topic: Assignment Extension Request • 5 hours ago</p>
+                </div>
+              </div>
+              <button
+                class="px-4 py-2 text-primary font-bold text-sm bg-primary/5 rounded-lg hover:bg-primary/10">Reply</button>
+            </div>
+          </div>
+        </div>
+        <!-- Class Performance Gauge (Smaller) -->
+        <div class="lg:col-span-2 space-y-6">
+          <h4 class="text-xl font-bold font-headline text-on-surface px-2">Course Status</h4>
+          <div class="bg-surface-container-high p-8 rounded-[2rem] h-full space-y-8">
+            <div>
+              <div class="flex justify-between items-center mb-3">
+                <span class="font-bold text-sm">Architecture I</span>
+                <span class="text-primary font-bold">92%</span>
+              </div>
+              <div class="h-3 w-full bg-primary-fixed-dim rounded-full overflow-hidden">
+                <div class="h-full bg-primary rounded-full" style="width: 92%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between items-center mb-3">
+                <span class="font-bold text-sm">Digital Humanities</span>
+                <span class="text-primary font-bold">78%</span>
+              </div>
+              <div class="h-3 w-full bg-primary-fixed-dim rounded-full overflow-hidden">
+                <div class="h-full bg-primary rounded-full" style="width: 78%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between items-center mb-3">
+                <span class="font-bold text-sm">Modern Philosophy</span>
+                <span class="text-primary font-bold">85%</span>
+              </div>
+              <div class="h-3 w-full bg-primary-fixed-dim rounded-full overflow-hidden">
+                <div class="h-full bg-primary rounded-full" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="pt-4">
+              <div
+                class="bg-surface-container-lowest p-5 rounded-2xl flex items-center space-x-4 border border-outline-variant/10">
+                <span class="material-symbols-outlined text-tertiary"
+                  style="font-variation-settings: 'FILL' 1;">info</span>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                  You have 3 ungraded assignments that are past their scheduled feedback date.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+{% endblock main %}

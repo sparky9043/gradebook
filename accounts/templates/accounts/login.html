@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+{% block main %}
+  <main class="min-h-screen flex items-center justify-center pt-20 pb-12 px-4 sm:px-6 lg:px-8">
+      <div
+          class="w-full max-w-5xl flex flex-col md:flex-row bg-surface-container-lowest rounded-[2rem] overflow-hidden shadow-2xl shadow-on-surface/5">
+          <!-- Branding/Visual Section -->
+          <div
+              class="relative hidden md:flex md:w-1/2 flex-col justify-between p-12 bg-surface-container-low overflow-hidden">
+              <div class="absolute inset-0 opacity-10 pointer-events-none">
+                  <div
+                      class="absolute top-[-10%] left-[-10%] w-full h-full bg-primary-container rounded-full blur-[120px]">
+                  </div>
+                  <div
+                      class="absolute bottom-[-20%] right-[-10%] w-full h-full bg-tertiary-container rounded-full blur-[120px]">
+                  </div>
+              </div>
+              <div class="relative z-10">
+                  <span
+                      class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary-container text-on-tertiary-container text-xs font-bold tracking-wider uppercase mb-8">
+                      <span class="material-symbols-outlined text-sm"
+                          style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                      Refining Education
+                  </span>
+                  <h1 class="text-5xl font-extrabold text-on-surface leading-tight tracking-tight mb-6">
+                      The art of <span class="text-primary italic">organized</span> grading.
+                  </h1>
+                  <p class="text-on-surface-variant text-lg max-w-md font-medium leading-relaxed">
+                      Experience a premium workspace designed for educators who value clarity and precision in student
+                      assessment.
+                  </p>
+              </div>
+              <div
+                  class="relative z-10 mt-12 bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10">
+                  <div class="flex items-center gap-4 mb-4">
+                      <div class="w-12 h-12 rounded-full overflow-hidden bg-primary-fixed">
+                          <img class="w-full h-full object-cover"
+                              data-alt="professional headshot of a smiling female professor in a library setting with soft natural light"
+                              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqR9UaU-yoSj23uNzxPkMFbjBcGYSS71rND10EmX1iLegf88nEmVVqcFi-bK8YfEkG5mu9r2Yh9FFgLbfoKmkErYMKIg1VDobvYCJMmLFeVT-EQoOScNTEIMkTiUE87x1-8C-lbhGFr7HvJmwfRzJWl0FLWdbtgQIbhURWIJAx6IgKoA4zIuwzFR5ClMQsQ78GzikuP8RyAhBISr4VQIeuvJEEZvj2GGCCRTA07YQP7k-MWFhYkZY2SqYq3J_xnupBZr2gGKBuhMhz" />
+                      </div>
+                      <div>
+                          <div class="font-bold text-on-surface">Dr. Elena Rossi</div>
+                          <div class="text-xs text-on-surface-variant font-medium">Head of Department, Milano
+                              University</div>
+                      </div>
+                  </div>
+                  <p class="text-sm italic text-secondary-dim">
+                      "Finally, a tool that treats educational data with the same aesthetic care as a high-end
+                      editorial."
+                  </p>
+              </div>
+          </div>
+          <!-- Login Form Section -->
+          <div class="w-full md:w-1/2 p-8 sm:p-12 lg:p-16 flex flex-col justify-center">
+              <div class="mb-10 text-center md:text-left">
+                  <h2 class="text-3xl font-bold text-on-surface tracking-tight mb-2">Welcome Back</h2>
+                  <p class="text-on-surface-variant font-medium">Please enter your credentials to access the atelier.
+                  </p>
+              </div>
+              <form method="post" class="space-y-6">
+                {% csrf_token %}
+                  <div>
+                      <label class="block text-sm font-bold text-on-surface-variant mb-2 ml-1" for="username">Username</label>
+                      <div class="relative">
+                          <span
+                              class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">person</span>
+                          <input
+                              class="w-full pl-12 pr-4 py-4 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all duration-300 placeholder:text-outline-variant text-on-surface font-medium"
+                              id="username" name="username" placeholder="enter username here" type="text" />
+                      </div>
+                  </div>
+                  <div>
+                      <div class="flex justify-between mb-2 ml-1">
+                          <label class="block text-sm font-bold text-on-surface-variant"
+                              for="password">Password</label>
+                          <a class="text-sm font-bold text-primary hover:text-primary-dim transition-colors"
+                              href="#">Forgot Password?</a>
+                      </div>
+                      <div class="relative">
+                          <span
+                              class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">lock</span>
+                          <input
+                              class="w-full pl-12 pr-4 py-4 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all duration-300 placeholder:text-outline-variant text-on-surface font-medium"
+                              id="password" name="password" placeholder="••••••••" type="password" />
+                      </div>
+                  </div>
+                  <div class="flex items-center gap-3 py-2">
+                      <input class="w-5 h-5 rounded-lg border-outline-variant text-primary focus:ring-primary/20"
+                          id="remember" type="checkbox" />
+                      <label class="text-sm font-semibold text-on-surface-variant" for="remember">Stay logged in for
+                          30 days</label>
+                  </div>
+                  <button
+                      class="w-full primary-gradient text-on-primary py-4 rounded-xl font-bold text-lg shadow-lg shadow-primary/20 hover:scale-[0.98] transition-transform duration-200 mt-4"
+                      type="submit">
+                      Sign In
+                  </button>
+              </form>
+              <div class="mt-10">
+                  <div class="relative flex items-center mb-8">
+                      <div class="flex-grow border-t border-surface-container-high"></div>
+                      <span
+                          class="flex-shrink mx-4 text-xs font-bold text-outline-variant tracking-widest uppercase">Institutional
+                          Access</span>
+                      <div class="flex-grow border-t border-surface-container-high"></div>
+                  </div>
+                  <div class="grid grid-cols-2 gap-4">
+                      <button
+                          class="flex items-center justify-center gap-2 py-3 bg-surface-container-low rounded-xl font-bold text-on-surface hover:bg-surface-container-high transition-colors">
+                          <img alt="Google" class="w-5 h-5"
+                              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHyw1G6Y3lOj0z-zNpwfX2ta1mr-dwetvHHGKaPVkZM5OCER77B6qP_9fGNdmVE5BmHqApl6C4gBXplVqs1znLyqvoSzyMUOFXz3n7XPO0dPnXKG9ug3CZK_5BEN7zGWjLxIojNv3gl8_hHHrsoJDYuE8RNsOxbMZ--B-Tu9AdWGVi1juoTGvsC3kpgUaQ8adQL_-rySXUizzfLoFPuas7wLKdHk6bSSgFc1QI3UVbuXPSm-y5nxPRM-MYgDbUtv57LActkIDZbCUh" />
+                          Google
+                      </button>
+                      <button
+                          class="flex items-center justify-center gap-2 py-3 bg-surface-container-low rounded-xl font-bold text-on-surface hover:bg-surface-container-high transition-colors">
+                          <span class="material-symbols-outlined text-lg"
+                              style="font-variation-settings: 'FILL' 1;">account_balance</span>
+                          SSO
+                      </button>
+                  </div>
+              </div>
+              <p class="mt-10 text-center text-sm font-medium text-on-surface-variant">
+                  New to the Atelier? <a class="text-primary font-bold hover:underline" href="#">Make an account</a>
+              </p>
+          </div>
+      </div>
+  </main>
+{% endblock main %}

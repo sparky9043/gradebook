@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block main %}
+  <main class="min-h-screen pt-24 pb-12 flex items-center justify-center px-4 md:px-8">
+      <!-- Main Layout Container: Bento-inspired Asymmetric Layout -->
+      <div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          <!-- Left Side: Editorial Content -->
+          <div class="lg:col-span-5 flex flex-col justify-center space-y-8 p-4">
+              <div class="space-y-4">
+                  <span
+                      class="inline-flex items-center px-3 py-1 rounded-full bg-tertiary-container text-on-tertiary-container text-xs font-bold tracking-widest uppercase">
+                      The Modern Educator
+                  </span>
+                  <h1 class="text-5xl md:text-6xl font-extrabold text-on-surface leading-[1.1] tracking-tight">
+                      Design your <span class="text-primary-dim">academic</span> legacy.
+                  </h1>
+                  <p class="text-lg text-on-surface-variant leading-relaxed max-w-md">
+                      Join an elite community of educators utilizing high-end editorial interfaces to transform
+                      student data into meaningful insights.
+                  </p>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                  <div class="bg-surface-container-low p-6 rounded-xl space-y-2">
+                      <span class="material-symbols-outlined text-primary"
+                          style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                      <h3 class="font-bold text-on-surface">Precision Grading</h3>
+                      <p class="text-sm text-on-surface-variant">Calibrated tools for modern assessment.</p>
+                  </div>
+                  <div class="bg-surface-container-low p-6 rounded-xl space-y-2">
+                      <span class="material-symbols-outlined text-primary"
+                          style="font-variation-settings: 'FILL' 1;">analytics</span>
+                      <h3 class="font-bold text-on-surface">Deep Insights</h3>
+                      <p class="text-sm text-on-surface-variant">Visualize progress with editorial clarity.</p>
+                  </div>
+              </div>
+          </div>
+          <!-- Right Side: Registration Form Card -->
+          <div
+              class="lg:col-span-7 bg-surface-container-lowest rounded-[2rem] p-8 md:p-12 ambient-shadow relative overflow-hidden">
+              <!-- Soft Tonal Background Element -->
+              <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary-container/20 rounded-full blur-3xl"></div>
+              <div class="relative z-10 space-y-8">
+                  <div class="space-y-2">
+                      <h2 class="text-3xl font-bold text-on-surface tracking-tight">Create an Account</h2>
+                      <p class="text-on-surface-variant">Start your journey with Academic Atelier today.</p>
+                  </div>
+                  <form class="space-y-6" method="post">
+                      {% csrf_token %}
+                      <!-- Email Field -->
+                      <div class="space-y-2">
+                          <label class="text-sm font-bold text-on-surface-variant ml-1" for="username">Username</label>
+                          <input
+                              class="w-full bg-surface-container-low border-none rounded-xl px-4 py-4 text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary/40 focus:bg-surface-container-lowest transition-all"
+                              id="username" placeholder="enter username here" type="text"
+                              name="username"
+                          />
+                      </div>
+                      <!-- Password Group -->
+                      <div class="space-y-2">
+                          <label class="text-sm font-bold text-on-surface-variant ml-1"
+                              for="password">Password</label>
+                          <input
+                            class="w-full bg-surface-container-low border-none rounded-xl px-4 py-4 text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary/40 focus:bg-surface-container-lowest transition-all"
+                            id="password" placeholder="••••••••" name="password" type="password" />
+                      </div>
+                      <!-- Terms -->
+                      {% comment %} <div class="flex items-center space-x-3 ml-1">
+                          <input
+                              class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5 bg-surface-container-low"
+                              id="terms" type="checkbox" />
+                          <label class="text-sm text-on-surface-variant" for="terms">
+                              I agree to the <a class="text-primary font-bold hover:underline" href="#">Terms of
+                                  Service</a> and <a class="text-primary font-bold hover:underline" href="#">Privacy
+                                  Policy</a>.
+                          </label>
+                      </div> {% endcomment %}
+                      <!-- Submit Action -->
+                      <div class="pt-4 space-y-6">
+                          <button
+                              class="w-full bg-primary-gradient text-on-primary py-4 rounded-xl text-lg font-bold hover:scale-[0.98] transition-all ambient-shadow hover:cursor-pointer text-stone-200"
+                              type="submit">
+                              Create Account
+                          </button>
+                          <p class="text-center text-on-surface-variant">
+                              Already have an account?
+                              <a class="text-primary font-bold hover:underline transition-all" href="#">Login here</a>
+                          </p>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </main>
+{% endblock main %}
